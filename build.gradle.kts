@@ -82,6 +82,7 @@ val sourcesJar by tasks.creating(Jar::class) {
     archiveClassifier.set("sources")
 }
 tasks.javadoc {
+    isFailOnError = false
     dependsOn(delombok)
     val outputDir: Directory by delombok.get().extra
     source = outputDir.asFileTree
@@ -93,9 +94,6 @@ publishing {
         create<MavenPublication>("maven") {
             artifact(sourcesJar) {
                 classifier = "sources"
-            }
-            artifact(tasks.javadoc) {
-                classifier = "javadoc"
             }
             artifact(tasks.remapJar)
             artifact(tasks.jar) {

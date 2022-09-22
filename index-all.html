@@ -112,6 +112,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/utils/CheckUtil.html#CheckUtil--">CheckUtil()</a></span> - Constructor for class moe.nea.molecula.utils.<a href="moe/nea/molecula/utils/CheckUtil.html" title="class in moe.nea.molecula.utils">CheckUtil</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Clicking.html#Clicking-moe.nea.molecula.MouseContext-">Clicking(MouseContext)</a></span> - Constructor for class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Clicking.html" title="class in moe.nea.molecula">RenderPass.Clicking</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Collecting.html#collect--">collect()</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Collecting.html" title="class in moe.nea.molecula">RenderPass.Collecting</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Collecting.html#Collecting--">Collecting()</a></span> - Constructor for class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Collecting.html" title="class in moe.nea.molecula">RenderPass.Collecting</a></dt>
@@ -150,8 +152,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/SizeConstraint.html#equals-java.lang.Object-">equals(Object)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/SizeConstraint.html" title="class in moe.nea.molecula">SizeConstraint</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Executing.html#Executing-moe.nea.molecula.RenderPass.Key-moe.nea.molecula.RenderContext-">Executing(RenderPass.Key, RenderContext)</a></span> - Constructor for class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Executing.html" title="class in moe.nea.molecula">RenderPass.Executing</a></dt>
-<dd>&nbsp;</dd>
 </dl>
 <a name="I:F">
 <!--   -->
@@ -176,7 +176,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/layouts/ColumnLayout.html#getChildren--">getChildren()</a></span> - Method in class moe.nea.molecula.layouts.<a href="moe/nea/molecula/layouts/ColumnLayout.html" title="class in moe.nea.molecula.layouts">ColumnLayout</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Executing.html#getCurrentPhase--">getCurrentPhase()</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Executing.html" title="class in moe.nea.molecula">RenderPass.Executing</a></dt>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Rendering.html#getCurrentPhase--">getCurrentPhase()</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Rendering.html" title="class in moe.nea.molecula">RenderPass.Rendering</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderContext.html#getFinalMouseX--">getFinalMouseX()</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderContext.html" title="class in moe.nea.molecula">RenderContext</a></dt>
 <dd>&nbsp;</dd>
@@ -246,6 +246,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/SizeConstraint.html#isContainedWithin-moe.nea.molecula.SizeConstraint-">isContainedWithin(SizeConstraint)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/SizeConstraint.html" title="class in moe.nea.molecula">SizeConstraint</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/MouseContext.html#isMouseWithin-int-int-int-int-">isMouseWithin(int, int, int, int)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/MouseContext.html" title="class in moe.nea.molecula">MouseContext</a></dt>
+<dd>
+<div class="block">Test whether the mouse is above an area in pixels, borders inclusive</div>
+</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderContext.html#isMouseWithin-int-int-int-int-">isMouseWithin(int, int, int, int)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderContext.html" title="class in moe.nea.molecula">RenderContext</a></dt>
 <dd>
 <div class="block">Test whether the mouse is above an area in pixels, borders inclusive</div>
@@ -290,6 +294,12 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/MoleculaGui.html#MoleculaGui--">MoleculaGui()</a></span> - Constructor for class moe.nea.molecula.<a href="moe/nea/molecula/MoleculaGui.html" title="class in moe.nea.molecula">MoleculaGui</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/MoleculaGui.html#mouseClicked-int-int-int-">mouseClicked(int, int, int)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/MoleculaGui.html" title="class in moe.nea.molecula">MoleculaGui</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="moe/nea/molecula/MouseContext.html" title="class in moe.nea.molecula"><span class="typeNameLink">MouseContext</span></a> - Class in <a href="moe/nea/molecula/package-summary.html">moe.nea.molecula</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/MouseContext.html#MouseContext-int-float-float-float-float-">MouseContext(int, float, float, float, float)</a></span> - Constructor for class moe.nea.molecula.<a href="moe/nea/molecula/MouseContext.html" title="class in moe.nea.molecula">MouseContext</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <a name="I:O">
 <!--   -->
@@ -305,6 +315,12 @@
 <div class="block">Occupy is called by Molecula every time a relayout is requested (for example: in case of a screen size update).</div>
 </dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/widgets/Button.html#occupy-moe.nea.molecula.SizeConstraint-">occupy(SizeConstraint)</a></span> - Method in class moe.nea.molecula.widgets.<a href="moe/nea/molecula/widgets/Button.html" title="class in moe.nea.molecula.widgets">Button</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Clicking.html#onClick-java.util.function.Consumer-">onClick(Consumer&lt;MouseContext&gt;)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Clicking.html" title="class in moe.nea.molecula">RenderPass.Clicking</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.html#onClick-java.util.function.Consumer-">onClick(Consumer&lt;MouseContext&gt;)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.html" title="class in moe.nea.molecula">RenderPass</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/ScreenDefinition.html#onClick-int-int-int-">onClick(int, int, int)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/ScreenDefinition.html" title="class in moe.nea.molecula">ScreenDefinition</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a name="I:P">
@@ -342,19 +358,23 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/ScreenDefinition.html#renderGui-moe.nea.molecula.RenderContext-">renderGui(RenderContext)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/ScreenDefinition.html" title="class in moe.nea.molecula">ScreenDefinition</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Rendering.html#Rendering-moe.nea.molecula.RenderPass.Key-moe.nea.molecula.RenderContext-">Rendering(RenderPass.Key, RenderContext)</a></span> - Constructor for class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Rendering.html" title="class in moe.nea.molecula">RenderPass.Rendering</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Collecting.html#renderInPhase-moe.nea.molecula.RenderPass.Key-java.util.function.Consumer-">renderInPhase(RenderPass.Key, Consumer&lt;RenderContext&gt;)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Collecting.html" title="class in moe.nea.molecula">RenderPass.Collecting</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Executing.html#renderInPhase-moe.nea.molecula.RenderPass.Key-java.util.function.Consumer-">renderInPhase(RenderPass.Key, Consumer&lt;RenderContext&gt;)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Executing.html" title="class in moe.nea.molecula">RenderPass.Executing</a></dt>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Rendering.html#renderInPhase-moe.nea.molecula.RenderPass.Key-java.util.function.Consumer-">renderInPhase(RenderPass.Key, Consumer&lt;RenderContext&gt;)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Rendering.html" title="class in moe.nea.molecula">RenderPass.Rendering</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.html#renderInPhase-moe.nea.molecula.RenderPass.Key-java.util.function.Consumer-">renderInPhase(RenderPass.Key, Consumer&lt;RenderContext&gt;)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.html" title="class in moe.nea.molecula">RenderPass</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="moe/nea/molecula/RenderPass.html" title="class in moe.nea.molecula"><span class="typeNameLink">RenderPass</span></a> - Class in <a href="moe/nea/molecula/package-summary.html">moe.nea.molecula</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="moe/nea/molecula/RenderPass.Clicking.html" title="class in moe.nea.molecula"><span class="typeNameLink">RenderPass.Clicking</span></a> - Class in <a href="moe/nea/molecula/package-summary.html">moe.nea.molecula</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="moe/nea/molecula/RenderPass.Collecting.html" title="class in moe.nea.molecula"><span class="typeNameLink">RenderPass.Collecting</span></a> - Class in <a href="moe/nea/molecula/package-summary.html">moe.nea.molecula</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="moe/nea/molecula/RenderPass.Executing.html" title="class in moe.nea.molecula"><span class="typeNameLink">RenderPass.Executing</span></a> - Class in <a href="moe/nea/molecula/package-summary.html">moe.nea.molecula</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="moe/nea/molecula/RenderPass.Key.html" title="class in moe.nea.molecula"><span class="typeNameLink">RenderPass.Key</span></a> - Class in <a href="moe/nea/molecula/package-summary.html">moe.nea.molecula</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="moe/nea/molecula/RenderPass.Rendering.html" title="class in moe.nea.molecula"><span class="typeNameLink">RenderPass.Rendering</span></a> - Class in <a href="moe/nea/molecula/package-summary.html">moe.nea.molecula</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="moe/nea/molecula/utils/RenderUtils.html" title="class in moe.nea.molecula.utils"><span class="typeNameLink">RenderUtils</span></a> - Class in <a href="moe/nea/molecula/utils/package-summary.html">moe.nea.molecula.utils</a></dt>
 <dd>&nbsp;</dd>
@@ -398,19 +418,27 @@
 <dl>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/widgets/Button.html#TEXT_MARGIN">TEXT_MARGIN</a></span> - Variable in class moe.nea.molecula.widgets.<a href="moe/nea/molecula/widgets/Button.html" title="class in moe.nea.molecula.widgets">Button</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Collecting.html#toString--">toString()</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Collecting.html" title="class in moe.nea.molecula">RenderPass.Collecting</a></dt>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/MouseContext.html#toString--">toString()</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/MouseContext.html" title="class in moe.nea.molecula">MouseContext</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Executing.html#toString--">toString()</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Executing.html" title="class in moe.nea.molecula">RenderPass.Executing</a></dt>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Clicking.html#toString--">toString()</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Clicking.html" title="class in moe.nea.molecula">RenderPass.Clicking</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Collecting.html#toString--">toString()</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Collecting.html" title="class in moe.nea.molecula">RenderPass.Collecting</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Key.html#toString--">toString()</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Key.html" title="class in moe.nea.molecula">RenderPass.Key</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Rendering.html#toString--">toString()</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Rendering.html" title="class in moe.nea.molecula">RenderPass.Rendering</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/SizeConstraint.html#toString--">toString()</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/SizeConstraint.html" title="class in moe.nea.molecula">SizeConstraint</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/MouseContext.html#transformed-int-int-float-float-">transformed(int, int, float, float)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/MouseContext.html" title="class in moe.nea.molecula">MouseContext</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderContext.html#transformed-int-int-float-float-">transformed(int, int, float, float)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderContext.html" title="class in moe.nea.molecula">RenderContext</a></dt>
 <dd>
 <div class="block">Transforms this <a href="moe/nea/molecula/RenderContext.html" title="class in moe.nea.molecula"><code>RenderContext</code></a> to a new one with transformations applied.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Executing.html#transformed-int-int-float-float-">transformed(int, int, float, float)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Executing.html" title="class in moe.nea.molecula">RenderPass.Executing</a></dt>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Clicking.html#transformed-int-int-float-float-">transformed(int, int, float, float)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Clicking.html" title="class in moe.nea.molecula">RenderPass.Clicking</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.Rendering.html#transformed-int-int-float-float-">transformed(int, int, float, float)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.Rendering.html" title="class in moe.nea.molecula">RenderPass.Rendering</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="moe/nea/molecula/RenderPass.html#transformed-int-int-float-float-">transformed(int, int, float, float)</a></span> - Method in class moe.nea.molecula.<a href="moe/nea/molecula/RenderPass.html" title="class in moe.nea.molecula">RenderPass</a></dt>
 <dd>&nbsp;</dd>

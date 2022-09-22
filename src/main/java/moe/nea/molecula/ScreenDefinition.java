@@ -30,8 +30,13 @@ public class ScreenDefinition {
 
     public void renderGui(RenderContext renderContext) {
         for (RenderPass.Key renderPassKey : requiredRenderPasses) {
-            RenderPass.Executing executing = new RenderPass.Executing(renderPassKey, renderContext);
-            root.render(executing);
+            RenderPass.Rendering rendering = new RenderPass.Rendering(renderPassKey, renderContext);
+            root.render(rendering);
         }
+    }
+
+    public void onClick(int mouseX, int mouseY, int mouseButton) {
+        RenderPass.Clicking clicking = new RenderPass.Clicking(new MouseContext(mouseButton, mouseX, mouseY, 1F, 1F));
+        root.render(clicking);
     }
 }

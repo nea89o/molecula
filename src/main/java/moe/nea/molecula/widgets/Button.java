@@ -57,5 +57,10 @@ public class Button implements Widget {
             GlStateManager.translate(TEXT_MARGIN, TEXT_MARGIN, 0);
             Minecraft.getMinecraft().fontRendererObj.drawString("§a" + getTranslatedText(), 0, 0, 0xFFFFFFFF);
         });
+        renderPass.onClick(click -> {
+            if (click.isMouseWithin(0, 0, usedSize.getWidth(), usedSize.getHeight())) {
+                System.out.println("Click detected: " + getTranslatedText());
+            }
+        });
     }
 }

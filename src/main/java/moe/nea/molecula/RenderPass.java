@@ -48,16 +48,32 @@ public abstract class RenderPass {
         }
     }
 
+    @AllArgsConstructor
+    @ToString
+    public static class Clicking extends RenderPass {
+        private final MouseContext mouseContext;
+
+        @Override
+        public void onClick(Consumer<MouseContext> clickHandled) {
+            clickHandled.accept(mouseContext);
+        }
+
+        @Override
+        public RenderPass transformed(int offsetX, int offsetY, float scaleX, float scaleY) {
+            return new Clicking(mouseContext.transformed(offsetX, offsetY, scaleX, scaleY));
+        }
+    }
+
     @RequiredArgsConstructor
     @ToString
-    public static class Executing extends RenderPass {
+    public static class Rendering extends RenderPass {
         @Getter
         private final Key currentPhase;
         private final RenderContext renderContext;
 
         @Override
         public RenderPass transformed(int offsetX, int offsetY, float scaleX, float scaleY) {
-            return new Executing(currentPhase, renderContext.transformed(offsetX, offsetY, scaleX, scaleY));
+            return new Rendering(currentPhase, renderContext.transformed(offsetX, offsetY, scaleX, scaleY));
         }
 
         @Override
@@ -79,6 +95,10 @@ public abstract class RenderPass {
         return transformed(offsetX, offsetY, 1F, 1F);
     }
 
-    public abstract void renderInPhase(Key renderPhase, Consumer<RenderContext> runIf);
+    public void renderInPhase(Key renderPhase, Consumer<RenderContext> runIf) {
+    }
+
+    public void onClick(Consumer<MouseContext> clickHandled) {
+    }
 
 }

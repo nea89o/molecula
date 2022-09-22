@@ -1,5 +1,6 @@
 package moe.nea.molecula;
 
+import lombok.Getter;
 import net.minecraft.client.gui.GuiScreen;
 
 import java.io.IOException;
@@ -8,18 +9,12 @@ public abstract class MoleculaGui extends GuiScreen {
 
     protected abstract ScreenDefinition createScreenDefinition();
 
-    private volatile ScreenDefinition screenDefinition;
-
-    public ScreenDefinition getScreenDefinition() {
-        if (screenDefinition == null) {
-            synchronized (this) {
-                if (screenDefinition == null) {
-                    screenDefinition = createScreenDefinition();
-                }
-            }
-        }
-        return screenDefinition;
+    public MoleculaGui() {
+        screenDefinition = createScreenDefinition();
     }
+
+    @Getter
+    private final ScreenDefinition screenDefinition;
 
     @Override
     public void initGui() {

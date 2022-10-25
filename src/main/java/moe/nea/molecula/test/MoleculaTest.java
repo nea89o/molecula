@@ -14,6 +14,7 @@ import moe.nea.molecula.MoleculaGui;
 import moe.nea.molecula.widgets.MBackground;
 import moe.nea.molecula.widgets.MButton;
 import moe.nea.molecula.widgets.MGridPanel;
+import moe.nea.molecula.widgets.MText;
 
 @Mod(modid = MoleculaTest.MODID)
 public class MoleculaTest {
@@ -28,7 +29,10 @@ public class MoleculaTest {
     @SubscribeEvent
     public void onKeyDown(TickEvent.ClientTickEvent event) {
         if (Keyboard.isKeyDown(Keyboard.KEY_K) && Minecraft.getMinecraft().currentScreen == null) {
-            var panel = MGridPanel.noGaps(18);
+            var panel = MGridPanel.withGaps(18, 2);
+            panel.addMolecule(MButton.withTranslatableLabel("test.button.text"), 0, 1, 8, 1);
+            panel.addMolecule(MText.withStaticText("Hoho Hoho Hoho Hoho Hoho Hoho Hoho Hoho Hoho Hoho Hoho Hoho Hoho Hoho Hoho Hoho Hoho Hoho Hoho "),
+                              0, 2, 8, 5);
             panel.addMolecule(MButton.withStaticLabel("Hehe"), 0, 0, 8, 1)
                  .setOnClick(() -> Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Clicked")));
             Minecraft.getMinecraft().displayGuiScreen(new MoleculaGui(new MBackground(6, panel)));

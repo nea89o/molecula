@@ -1,0 +1,17 @@
+root = true
+
+[*.java]
+ij_java_imports_layout = *, |, moe.nea.molecula.**, |, $*
+ij_any_align_consecutive_assignments = true
+ij_java_class_count_to_use_import_on_demand = 999
+ij_java_names_count_to_use_import_on_demand = 999
+ij_any_align_consecutive_variable_declarations = true
+end_of_line = lf
+ij_any_align_multiline_parameters_in_calls = true
+ij_any_align_multiline_chained_methods = true
+ij_java_do_not_wrap_after_single_annotation = true
+charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4

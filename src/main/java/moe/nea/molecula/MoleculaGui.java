@@ -1,33 +1,48 @@
 package moe.nea.molecula;
 
-import lombok.Getter;
-import net.minecraft.client.gui.GuiScreen;
-
 import java.io.IOException;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.renderer.GlStateManager;
+import org.lwjgl.input.Keyboard;
 
-public abstract class MoleculaGui extends GuiScreen {
-
-    protected abstract ScreenDefinition createScreenDefinition();
-
-    public MoleculaGui() {
-        screenDefinition = createScreenDefinition();
-    }
-
+@RequiredArgsConstructor
+public class MoleculaGui extends GuiScreen {
+    @NonNull
     @Getter
-    private final ScreenDefinition screenDefinition;
+    final Molecule root;
+
+    @Getter int guiLeft, guiTop;
 
     @Override
     public void initGui() {
-        getScreenDefinition().prepareGui(new SizeConstraint(width, height));
+        super.initGui();
+        Keyboard.enableRepeatEvents(true);
+        root.attach(this);
+        guiLeft = (width - root.getWidth()) / 2;
+        guiTop  = (height - root.getHeight()) / 2;
+        root.setLocation(guiLeft, guiTop);
+    }
+
+    @Override
+    public void onGuiClosed() {
+        super.onGuiClosed();
+        Keyboard.enableRepeatEvents(false);
     }
 
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-        getScreenDefinition().renderGui(new RenderContext(mouseX, mouseY, partialTicks, this, 0F, 0F, 1F, 1F));
+        drawDefaultBackground();
+        GlStateManager.pushMatrix();
+        GlStateManager.translate(guiLeft, guiTop, 0);
+        root.render(mouseX - guiLeft, mouseY - guiTop, partialTicks);
+        GlStateManager.popMatrix();
     }
 
     @Override
     protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
-        getScreenDefinition().onClick(mouseX, mouseY, mouseButton);
+        root.mouseClicked(mouseX - guiLeft, mouseY - guiTop, mouseButton);
     }
 }

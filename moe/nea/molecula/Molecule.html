@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":6,"i12":10,"i13":10,"i14":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":6,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -107,7 +107,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../moe/nea/molecula/widgets/MButton.html" title="class in moe.nea.molecula.widgets">MButton</a>, <a href="../../../moe/nea/molecula/widgets/MLayout.html" title="class in moe.nea.molecula.widgets">MLayout</a>, <a href="../../../moe/nea/molecula/widgets/MText.html" title="class in moe.nea.molecula.widgets">MText</a></dd>
+<dd><a href="../../../moe/nea/molecula/widgets/MButton.html" title="class in moe.nea.molecula.widgets">MButton</a>, <a href="../../../moe/nea/molecula/widgets/MLayout.html" title="class in moe.nea.molecula.widgets">MLayout</a>, <a href="../../../moe/nea/molecula/widgets/MText.html" title="class in moe.nea.molecula.widgets">MText</a>, <a href="../../../moe/nea/molecula/widgets/MTextField.html" title="class in moe.nea.molecula.widgets">MTextField</a></dd>
 </dl>
 <hr>
 <br>
@@ -186,10 +186,21 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../moe/nea/molecula/Molecule.html#isFocussed--">isFocussed</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../moe/nea/molecula/Molecule.html#isHovered-int-int-">isHovered</a></span>(int&nbsp;mouseX,
          int&nbsp;mouseY)</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../moe/nea/molecula/Molecule.html#keyTyped-char-int-">keyTyped</a></span>(char&nbsp;typedChar,
+        int&nbsp;keyCode)</code>
+<div class="block">Called when this molecule is focussed and a key is pressed.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../moe/nea/molecula/Molecule.html#mouseClicked-int-int-int-">mouseClicked</a></span>(int&nbsp;mouseX,
             int&nbsp;mouseY,
@@ -197,25 +208,37 @@ extends java.lang.Object</pre>
 <div class="block">Called when a click event is received.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../moe/nea/molecula/Molecule.html#render-int-int-float-">render</a></span>(int&nbsp;mouseX,
       int&nbsp;mouseY,
       float&nbsp;partialTicks)</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../moe/nea/molecula/Molecule.html#requestFocus--">requestFocus</a></span>()</code>
+<div class="block">Brings this molecule into focus.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../moe/nea/molecula/Molecule.html#setLocation-int-int-">setLocation</a></span>(int&nbsp;x,
            int&nbsp;y)</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../moe/nea/molecula/Molecule.html#setParent-moe.nea.molecula.widgets.MLayout-">setParent</a></span>(<a href="../../../moe/nea/molecula/widgets/MLayout.html" title="class in moe.nea.molecula.widgets">MLayout</a>&nbsp;parent)</code>&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../moe/nea/molecula/Molecule.html#setSize-int-int-">setSize</a></span>(int&nbsp;width,
        int&nbsp;height)</code>&nbsp;</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../moe/nea/molecula/Molecule.html#tick--">tick</a></span>()</code>
+<div class="block">Executed once per tick while this molecule is being attached.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -354,6 +377,56 @@ extends java.lang.Object</pre>
 <dd><code>mouseY</code> - relative to the element</dd>
 <dd><code>mouseButton</code> - mouse button as provided by LWJGL</dd>
 </dl>
+</li>
+</ul>
+<a name="keyTyped-char-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>keyTyped</h4>
+<pre>public&nbsp;boolean&nbsp;keyTyped(char&nbsp;typedChar,
+                        int&nbsp;keyCode)</pre>
+<div class="block">Called when this molecule is focussed and a key is pressed.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>typedChar</code> - the character responding to this key</dd>
+<dd><code>keyCode</code> - the key code responding to this key</dd>
+</dl>
+</li>
+</ul>
+<a name="requestFocus--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>requestFocus</h4>
+<pre>public&nbsp;void&nbsp;requestFocus()</pre>
+<div class="block">Brings this molecule into focus.
+ Has no effect if the molecule is not attached to a <a href="../../../moe/nea/molecula/MoleculaGui.html" title="class in moe.nea.molecula"><code>MoleculaGui</code></a></div>
+</li>
+</ul>
+<a name="isFocussed--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isFocussed</h4>
+<pre>public&nbsp;boolean&nbsp;isFocussed()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether this molecule is focussed by the current <a href="../../../moe/nea/molecula/Molecule.html#host"><code>host</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="tick--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>tick</h4>
+<pre>public&nbsp;void&nbsp;tick()</pre>
+<div class="block">Executed once per tick while this molecule is being attached.</div>
 </li>
 </ul>
 <a name="getParent--">

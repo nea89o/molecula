@@ -18,12 +18,18 @@ import moe.nea.molecula.utils.GLPatchRenderer;
 @EqualsAndHashCode(callSuper = true)
 public class MButton extends Molecule {
 
+    private static NinePatch<ResourceLocation> createPatch(int offset) {
+        return NinePatch
+            .builder(new TextureRegion<>(Resources.BUTTONS, 0F, offset / 3F, 1F, (offset + 1) / 3F))
+            .mode(NinePatch.Mode.TILING)
+            .cornerSize(2, 3)
+            .cornerUv(2F / 200F, 3F / 30F)
+            .build();
+    }
+
     private static NinePatch<ResourceLocation> backgroundDisabled = createPatch(0);
     private static NinePatch<ResourceLocation> backgroundEnabled = createPatch(1);
     private static NinePatch<ResourceLocation> backgroundHoveredEnabled = createPatch(2);
-    final Supplier<String> label;
-    boolean enabled = true;
-    Runnable onClick;
 
     public static MButton withStaticLabel(String label) {
         return new MButton(() -> label);
@@ -33,14 +39,11 @@ public class MButton extends Molecule {
         return new MButton(() -> I18n.format(key, params));
     }
 
-    private static NinePatch<ResourceLocation> createPatch(int offset) {
-        return NinePatch
-            .builder(new TextureRegion<>(Resources.BUTTONS, 0F, offset / 3F, 1F, (offset + 1) / 3F))
-            .mode(NinePatch.Mode.TILING)
-            .cornerSize(2, 3)
-            .cornerUv(2F / 200F, 3F / 30F)
-            .build();
-    }
+
+    final Supplier<String> label;
+    boolean enabled = true;
+    Runnable onClick;
+
 
     public String getTranslatedText() {
         return label.get();

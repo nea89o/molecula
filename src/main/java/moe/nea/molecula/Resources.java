@@ -10,4 +10,5 @@ public class Resources {
 
     public static final ResourceLocation BUTTONS = r("textures/gui/buttons.png");
     public static final ResourceLocation BACKGROUND = r("textures/gui/background.png");
+    public static final ResourceLocation TEXTFIELD = r("textures/gui/textfield.png");
 }

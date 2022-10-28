@@ -37,6 +37,13 @@ public abstract class MLayout extends Molecule {
     }
 
     @Override
+    public void tick() {
+        for (Molecule child : getChildren()) {
+            child.tick();
+        }
+    }
+
+    @Override
     public void attach(MoleculaGui moleculaGui) {
         super.attach(moleculaGui);
         for (Molecule child : getChildren()) {

@@ -72,4 +72,37 @@ public abstract class Molecule {
      */
     public void mouseClicked(int mouseX, int mouseY, int mouseButton) {
     }
+
+    /**
+     * Called when this molecule is focussed and a key is pressed.
+     *
+     * @param typedChar the character responding to this key
+     * @param keyCode   the key code responding to this key
+     */
+    public boolean keyTyped(char typedChar, int keyCode) {
+        return false;
+    }
+
+    /**
+     * Brings this molecule into focus.
+     * Has no effect if the molecule is not attached to a {@link MoleculaGui}
+     */
+    public void requestFocus() {
+        if (host != null)
+            host.requestFocus(this);
+    }
+
+    /**
+     * @return whether this molecule is focussed by the current {@link #host}
+     */
+    public boolean isFocussed() {
+        return host.getFocussed() == this;
+    }
+
+    /**
+     * Executed once per tick while this molecule is being attached.
+     */
+    public void tick() {
+    }
+
 }

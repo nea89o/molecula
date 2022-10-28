@@ -1,6 +1,7 @@
 package moe.nea.molecula;
 
 import java.io.IOException;
+import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,11 @@ public class MoleculaGui extends GuiScreen {
     final Molecule root;
 
     @Getter int guiLeft, guiTop;
+
+    @Getter
+    @Nullable
+    Molecule focussed;
+
 
     @Override
     public void initGui() {
@@ -41,8 +47,27 @@ public class MoleculaGui extends GuiScreen {
         GlStateManager.popMatrix();
     }
 
+    public void requestFocus(Molecule molecule) {
+        this.focussed = molecule;
+    }
+
+
+    @Override
+    protected void keyTyped(char typedChar, int keyCode) throws IOException {
+        if (focussed == null || !focussed.keyTyped(typedChar, keyCode)) {
+            super.keyTyped(typedChar, keyCode);
+        }
+    }
+
+    @Override
+    public void updateScreen() {
+        super.updateScreen();
+        root.tick();
+    }
+
     @Override
     protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
+        focussed = null;
         root.mouseClicked(mouseX - guiLeft, mouseY - guiTop, mouseButton);
     }
 }
